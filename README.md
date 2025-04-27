@@ -291,10 +291,14 @@ Só `<li>` diretamente dentro de `<ul>`.
 ### Formas de definir cores:
 
 - **Nomes**: `red`, `blue`, `green`.
-  Você escreve diretamente o nome em inglês da cor.
+
+    Você escreve diretamente o nome em inglês da cor.
 
   
 - **Hexadecimal**: `#ff5733`
+
+    Um código que representa a mistura de vermelho (R), verde (G) e azul (B).
+    Cada cor vai de 00 a FF (0 a 255 em hexadecimal).
 - **RGB**: `rgb(255, 87, 51)`
 
 
