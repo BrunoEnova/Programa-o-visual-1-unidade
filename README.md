@@ -521,17 +521,7 @@ Cada caixa (box) é composta por quatro áreas, de dentro para fora:
 }
 ```
 
-
-**Resumo visual:**
-
-```
-|&lt;-- margin --&gt;|&lt;-- border --&gt;|&lt;-- padding --&gt;| content |&lt;-- padding --&gt;|&lt;-- border --&gt;|&lt;-- margin --&gt;|
-```
-
-
----
-
-## **Como o tamanho final do elemento é calculado?**
+**Como o tamanho final do elemento é calculado?**
 
 Por padrão, **width** e **height** definem apenas o tamanho do conteúdo. O tamanho total do elemento é a soma do conteúdo, padding, borda e margem[^1][^4][^6][^10]:
 
@@ -553,7 +543,6 @@ Altura total  = height + padding topo + padding base + border topo + border base
 
 - Largura total: 100 (conteúdo) + 10*2 (padding) + 5*2 (border) + 20*2 (margin) = 170px
 
----
 
 ## **A Propriedade `box-sizing`**
 
