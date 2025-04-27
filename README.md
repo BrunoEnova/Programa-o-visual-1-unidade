@@ -469,7 +469,7 @@ Espaço **fora** da borda, separando elementos.
 
 ## 18. **Box Model e box-sizing**
 
-O **Box Model** é um conceito fundamental do CSS que define como cada elemento HTML é representado visualmente na página: como uma caixa retangular composta por diferentes áreas. Entender o Box Model é essencial para controlar o tamanho, o espaçamento e o posicionamento dos elementos em um layout web[^1][^3][^5][^7].
+O **Box Model** é um conceito fundamental do CSS que define como cada elemento HTML é representado visualmente na página: como uma caixa retangular composta por diferentes áreas. Entender o Box Model é essencial para controlar o tamanho, o espaçamento e o posicionamento dos elementos em um layout web.
 
 ### **Componentes do Box Model**
 
@@ -523,7 +523,7 @@ Cada caixa (box) é composta por quatro áreas, de dentro para fora:
 
 **Como o tamanho final do elemento é calculado?**
 
-Por padrão, **width** e **height** definem apenas o tamanho do conteúdo. O tamanho total do elemento é a soma do conteúdo, padding, borda e margem[^1][^4][^6][^10]:
+Por padrão, **width** e **height** definem apenas o tamanho do conteúdo. O tamanho total do elemento é a soma do conteúdo, padding, borda e margem:
 
 ```
 Largura total = width + padding esquerdo + padding direito + border esquerdo + border direito + margin esquerdo + margin direito
