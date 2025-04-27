@@ -301,7 +301,7 @@ Seleciona apenas filhos diretos.
 
 ```css
 ul > li {
-  list-style-type: square;
+  color: green;
 }
 ```
 
@@ -546,7 +546,7 @@ Altura total  = height + padding topo + padding base + border topo + border base
 
 ## **A Propriedade `box-sizing`**
 
-A propriedade `box-sizing` define como o navegador calcula o tamanho de um elemento[^1][^4][^6][^8][^9][^10]:
+A propriedade `box-sizing` define como o navegador calcula o tamanho de um elemento:
 
 - **`box-sizing: content-box` (padrão):**
     - `width` e `height` se aplicam apenas ao conteúdo.
