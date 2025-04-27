@@ -579,49 +579,6 @@ A propriedade `box-sizing` define como o navegador calcula o tamanho de um eleme
 
         - Largura total: 200px (já inclui padding e border)
 
-**Vantagem:**
-Usar `border-box` facilita o controle do layout, pois o tamanho do elemento não muda ao adicionar padding ou border[^6][^9][^10].
-
----
-
-
-```
-+---------------------------+
-|        margin             |
-|  +---------------------+  |
-|  |      border         |  |
-|  |  +---------------+  |  |
-|  |  |   padding     |  |  |
-|  |  | +----------+  |  |  |
-|  |  | | content  |  |  |  |
-|  |  | +----------+  |  |  |
-|  |  +---------------+  |  |
-|  +---------------------+  |
-+---------------------------+
-```
-
-- **content**: Conteúdo (texto, imagem)
-- **padding**: Espaço interno
-- **border**: Borda
-- **margin**: Espaço externo
-
-
-### box-sizing
-
-- **content-box** (padrão): largura/altura só do conteúdo.
-- **border-box**: largura/altura inclui padding e borda.
-
-```css
-.box {
-  width: 200px;
-  padding: 20px;
-  border: 5px solid black;
-  box-sizing: border-box;
-}
-```
-
-Com `border-box`, a caixa terá exatamente 200px de largura, **incluindo** padding e borda.
-
 ---
 
 ## 19. O que é o GitHub?
