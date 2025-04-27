@@ -207,7 +207,30 @@ Desvantagens:
 
 ## 7. Seletores: elemento, classe, id
 
-### Elemento
+Seletor é a parte do código CSS que escolhe (ou "seleciona") quais elementos do HTML vão receber o estilo que você está definindo.
+
+Exemplo básico:
+
+````css
+Copiar
+Editar
+p {
+  color: blue;
+}
+````
+Aqui, o seletor é p.
+Isso quer dizer: ➔ "Pegue todos os parágrafos <p> da página e pinte o texto de azul."
+
+Tipos de seletores mais comuns:
+
+|Tipo	| Exemplo|	O que faz|
+|-----|--------|-----------|
+|Por tag	|p, h1, div	|Estiliza todos os elementos dessa tag
+|Por classe|	.minha-classe|	Estiliza elementos que têm o atributo class="minha-classe"
+|Por ID|	#meu-id|	Estiliza o elemento que tem o atributo id="meu-id"
+
+
+### Tag
 
 Aplica o estilo a todas as tags do mesmo tipo.
 
@@ -298,9 +321,20 @@ Só `<li>` diretamente dentro de `<ul>`.
 - **Hexadecimal**: `#ff5733`
 
     Um código que representa a mistura de vermelho (R), verde (G) e azul (B).
+
     Cada cor vai de 00 a FF (0 a 255 em hexadecimal).
 - **RGB**: `rgb(255, 87, 51)`
 
+    Especifica a cor usando três valores entre 0 e 255, para vermelho, verde e azul, rgb(vermelho, verde, azul).
+
+   Como ler rgb(40, 150, 255):
+
+   - Pouco vermelho (40).
+
+   - Médio verde (150).
+
+   - Azul forte (255).
+  
 
 
 ```css
@@ -327,6 +361,17 @@ p {
   line-height: 1.5;
 }
 ```
+| Propriedade         | O que faz                                             | Exemplos                              |
+|:--------------------|:-----------------------------------------------------|:--------------------------------------|
+| `font-family`        | Define qual fonte será usada no texto.               | `'Arial', sans-serif`                 |
+| `font-size`          | Define o tamanho da fonte.                           | `18px`, `2em`, `100%`                 |
+| `font-style`         | Define o estilo da fonte.                            | `normal`, `italic`, `oblique`         |
+| `font-weight`        | Define a grossura da fonte.                          | `normal`, `bold`, `100`, `700`        |
+| `text-align`         | Define o alinhamento horizontal do texto.            | `left`, `center`, `right`, `justify`  |
+| `text-decoration`    | Adiciona decorações no texto.                        | `none`, `underline`, `line-through`   |
+| `text-transform`     | Transforma as letras do texto.                       | `none`, `uppercase`, `lowercase`      |
+| `letter-spacing`     | Controla o espaçamento entre as letras.              | `2px`, `0.1em`                        |
+| `line-height`        | Controla a altura da linha (espaço entre as linhas). | `normal`, `1.5`, `1.2em`              |
 
 
 ---
@@ -422,9 +467,134 @@ Espaço **fora** da borda, separando elementos.
 
 ---
 
-## 18. Box Model e box-sizing
+## 18. **Box Model e box-sizing**
 
-### Box Model
+O **Box Model** é um conceito fundamental do CSS que define como cada elemento HTML é representado visualmente na página: como uma caixa retangular composta por diferentes áreas. Entender o Box Model é essencial para controlar o tamanho, o espaçamento e o posicionamento dos elementos em um layout web[^1][^3][^5][^7].
+
+### **Componentes do Box Model**
+
+Cada caixa (box) é composta por quatro áreas, de dentro para fora:
+
+1. **Conteúdo (content)**
+    - É onde fica o conteúdo real do elemento, como texto ou imagem.
+    - O tamanho é definido pelas propriedades `width` e `height`.
+    - Exemplo:
+
+```css
+.caixa {
+  width: 200px;
+  height: 100px;
+}
+```
+
+2. **Preenchimento (padding)**
+    - Espaço entre o conteúdo e a borda.
+    - Pode ser definido individualmente para cada lado (`padding-top`, `padding-right`, etc.) ou para todos de uma vez (`padding`).
+    - O fundo do elemento (background) se estende até o final do padding.
+    - Exemplo:
+
+```css
+.caixa {
+  padding: 20px;
+}
+```
+
+3. **Borda (border)**
+    - Linha que envolve o conteúdo e o padding.
+    - Pode ter cor, largura e estilo diferentes para cada lado.
+    - Exemplo:
+
+```css
+.caixa {
+  border: 2px solid #333;
+}
+```
+
+4. **Margem (margin)**
+    - Espaço externo que separa o elemento dos outros ao redor.
+    - Também pode ser definido individualmente ou em conjunto.
+    - Exemplo:
+
+```css
+.caixa {
+  margin: 10px;
+}
+```
+
+
+**Resumo visual:**
+
+```
+|&lt;-- margin --&gt;|&lt;-- border --&gt;|&lt;-- padding --&gt;| content |&lt;-- padding --&gt;|&lt;-- border --&gt;|&lt;-- margin --&gt;|
+```
+
+
+---
+
+## **Como o tamanho final do elemento é calculado?**
+
+Por padrão, **width** e **height** definem apenas o tamanho do conteúdo. O tamanho total do elemento é a soma do conteúdo, padding, borda e margem[^1][^4][^6][^10]:
+
+```
+Largura total = width + padding esquerdo + padding direito + border esquerdo + border direito + margin esquerdo + margin direito
+Altura total  = height + padding topo + padding base + border topo + border base + margin topo + margin base
+```
+
+**Exemplo prático:**
+
+```css
+.caixa {
+  width: 100px;
+  padding: 10px;
+  border: 5px solid;
+  margin: 20px;
+}
+```
+
+- Largura total: 100 (conteúdo) + 10*2 (padding) + 5*2 (border) + 20*2 (margin) = 170px
+
+---
+
+## **A Propriedade `box-sizing`**
+
+A propriedade `box-sizing` define como o navegador calcula o tamanho de um elemento[^1][^4][^6][^8][^9][^10]:
+
+- **`box-sizing: content-box` (padrão):**
+    - `width` e `height` se aplicam apenas ao conteúdo.
+    - Padding e border são somados ao tamanho final.
+    - Exemplo:
+
+```css
+.caixa {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid;
+  box-sizing: content-box;
+}
+```
+
+        - Largura total: 200 + 20*2 + 5*2 = 250px
+- **`box-sizing: border-box`:**
+    - `width` e `height` incluem conteúdo, padding e border.
+    - O tamanho total do elemento é exatamente o valor definido.
+    - Exemplo:
+
+```css
+.caixa {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid;
+  box-sizing: border-box;
+}
+```
+
+        - Largura total: 200px (já inclui padding e border)
+
+**Vantagem:**
+Usar `border-box` facilita o controle do layout, pois o tamanho do elemento não muda ao adicionar padding ou border[^6][^9][^10].
+
+---
+
 
 ```
 +---------------------------+
