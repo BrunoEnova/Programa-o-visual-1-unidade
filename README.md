@@ -562,7 +562,7 @@ A propriedade `box-sizing` define como o navegador calcula o tamanho de um eleme
 }
 ```
 
-        - Largura total: 200 + 20*2 + 5*2 = 250px
+    Largura total: 200 + 20*2 + 5*2 = 250px
 - **`box-sizing: border-box`:**
     - `width` e `height` incluem conteúdo, padding e border.
     - O tamanho total do elemento é exatamente o valor definido.
@@ -577,7 +577,7 @@ A propriedade `box-sizing` define como o navegador calcula o tamanho de um eleme
 }
 ```
 
-        - Largura total: 200px (já inclui padding e border)
+      Largura total: 200px (já inclui padding e border)
 
 ---
 
@@ -591,28 +591,6 @@ A propriedade `box-sizing` define como o navegador calcula o tamanho de um eleme
 - **Documentar** projetos (README, Wiki)
 - **Hospedar sites estáticos** gratuitamente (GitHub Pages)
 
-
-### Fluxo básico de uso
-
-1. Crie um repositório no GitHub.
-2. Clone o repositório para seu computador.
-3. Faça alterações no código.
-4. Use comandos Git para versionar:
-    - `git add .`
-    - `git commit -m "Mensagem"`
-    - `git push`
-5. As alterações aparecem no GitHub.
-
-### Exemplo visual
-
-```
-[Seu Computador] ----(git push)---> [GitHub]
-       ^                                 |
-       |----(git pull)-------------------|
-```
-
-
----
 
 ## Recursos visuais e extras
 
